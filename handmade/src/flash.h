@@ -6,7 +6,8 @@
 
 static void flash_init(void) {
   REG_CPU_EXEC_STATUS_2 = 0x04;
-  REG_CPU_CTRL_CA81 |= 0x01;
+  // NOTE: this broke PCIe enumeration on 9060
+  //REG_CPU_CTRL_CA81 |= 0x01;
   REG_INT_AUX_STATUS = 0x02;
   REG_FLASH_DIV = 0x04;
 }
